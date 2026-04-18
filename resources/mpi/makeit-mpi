@@ -1,0 +1,6 @@
+mpicc -o mpi_mm-rdv-0 -DMPITESTPHASES=0 mpi_mm-rdv.c
+mpicc -o mpi_mm-rdv-1 -DMPITESTPHASES=1 mpi_mm-rdv.c
+mpicc -o mpi_mm-rdv-2 -DMPITESTPHASES=2 mpi_mm-rdv.c
+mpicc -o mpi_mm-rdv-3 -DMPITESTPHASES=3 mpi_mm-rdv.c
+mpicc -o mpi_mm-rdv-4 -DMPITESTPHASES=4 mpi_mm-rdv.c
+mpicc -o mpi_mm-rdv-5 -DMPITESTPHASES=5 mpi_mm-rdv.c
