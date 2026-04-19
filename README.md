@@ -6,8 +6,6 @@ This container contains all the required tools as well as the source code files 
 
 See the section of `Dockerfile` that executes `apt-get`. Everything is installed during that time.
 
-Additional cross compilation tools are also installed only for x86.
-
 ## Included Resources
 
 Files under the `resources` directory inside this project will be copied to `/opt/resources` on the container.

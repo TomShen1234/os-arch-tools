@@ -40,9 +40,3 @@ alias ls='ls --color=auto'
 echo "Welcome to Computer Architecture and Operating Systems class!"
 echo "Shared work directory: /workspace"
 echo "Resources for hands-on activities and homeworks: /opt/resources"
-
-# If running on x86, prints a message about cross-compilation
-if [[ "$(uname -m)" == "x86_64" ]]; then
-    echo "This container is running on x86_64 architecture."
-    echo "Cross-compilation tools are available for assignments requiring arm64 compilation."
-fi

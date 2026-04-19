@@ -1,5 +1,7 @@
 FROM ubuntu:26.04
 
+ARG TARGETARCH
+
 # Avoid interactive prompts
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -16,18 +18,12 @@ RUN apt-get update && \
     g++ \
     gdb \
     libomp-dev \
-    && if [ "$TARGETARCH" = "amd64" ]; then \
-        dpkg --add-architecture arm64 && \
-        apt-get update && \
-        apt-get install -y \
-            qemu \
-            libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev bison flex libssl-dev bc \
-            gcc-arm-linux-gnueabi \
-            gcc-arm-none-eabi \
-            gdb-multiarch \
-            net-tools \
-            ; \
-    fi \
+    qemu-user \
+    libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi libncurses5-dev bison flex libssl-dev bc \
+    gcc-arm-linux-gnueabi \
+    gcc-arm-none-eabi \
+    gdb-multiarch \
+    net-tools \
     && apt-get clean \
     && apt-get autoremove -y --purge \
     && rm -rf /var/lib/apt/lists/* \
