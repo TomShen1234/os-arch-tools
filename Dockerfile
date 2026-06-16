@@ -29,7 +29,8 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /workspace /opt/resources \
     && git clone https://github.com/remzi-arpacidusseau/ostep-code /opt/resources/ostep-code \
-    && git clone https://github.com/remzi-arpacidusseau/ostep-homework /opt/resources/ostep-homework
+    && git clone https://github.com/remzi-arpacidusseau/ostep-homework /opt/resources/ostep-homework \
+    && ln -s /usr/bin/python3 /usr/bin/python
 
 # Copy resources files
 COPY resources/ /opt/resources/
