@@ -24,6 +24,7 @@ RUN apt-get update && \
     gcc-arm-none-eabi \
     gdb-multiarch \
     net-tools \
+    iputils-ping telnet \
     && apt-get clean \
     && apt-get autoremove -y --purge \
     && rm -rf /var/lib/apt/lists/* \
